@@ -22,6 +22,5 @@ To run this application, you need:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/rolldice-go-app.git
-   cd rolldice-go-app
+   git clone https://github.com/mhtcode/simple-rolldiceApp-using-openTelemetry.git
    ```
