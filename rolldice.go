@@ -17,9 +17,9 @@ import (
 const name = "rolldice"
 
 var (
-	tracer = otel.Tracer(name)
-	meter  = otel.Meter(name)
-	logger = otelslog.NewLogger(name)
+	tracer  = otel.Tracer(name)
+	meter   = otel.Meter(name)
+	logger  = otelslog.NewLogger(name)
 	rollCnt metric.Int64Counter
 )
 
@@ -50,7 +50,6 @@ func rolldice(w http.ResponseWriter, r *http.Request) {
 	rollValueAttr := attribute.Int("roll.value", roll)
 	span.SetAttributes(rollValueAttr)
 	rollCnt.Add(ctx, 1, metric.WithAttributes(rollValueAttr))
-
 	resp := strconv.Itoa(roll) + "\n"
 	if _, err := io.WriteString(w, resp); err != nil {
 		log.Printf("Write failed: %v\n", err)

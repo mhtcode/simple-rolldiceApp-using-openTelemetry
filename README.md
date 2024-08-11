@@ -35,7 +35,7 @@ To build and run this application, you need:
 
 3. **Running the Docker Container:**
    ```bash
-   docker run -d -p 8080:8080 --name rolldice-app rolldice-app
+   docker run -it --rm -p 8080:8080 --name rolldice-app rolldice-app
    ```
 
 ### Usage
