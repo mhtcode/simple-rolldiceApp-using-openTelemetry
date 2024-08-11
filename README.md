@@ -12,10 +12,11 @@ This is a simple Go-based web application that simulates the rolling of dice. Th
 
 ### Prerequisites
 
-To run this application, you need:
+To build and run this application, you need:
 
 - [Go](https://golang.org/doc/install) (version 1.16 or later)
 - [OpenTelemetry Go SDK](https://pkg.go.dev/go.opentelemetry.io/otel)
+- [Docker](https://docs.docker.com/get-docker/)
 
 ### Installation
 
@@ -23,4 +24,26 @@ To run this application, you need:
 
    ```bash
    git clone https://github.com/mhtcode/simple-rolldiceApp-using-openTelemetry.git
+   cd simple-rolldiceApp-using-openTelemetry
    ```
+
+2. **Build the Docker image:**
+
+   ```bash
+   docker build -t rolldice-app .
+   ```
+
+3. **Running the Docker Container:**
+   ```bash
+   docker run -d -p 8080:8080 --name rolldice-app rolldice-app
+   ```
+
+### Usage
+
+Once the Docker image is built and the container is running, you can access the RollDice application's functionality through the following routes:
+
+- **Roll a Dice:** To simulate a dice roll, navigate to:
+  ```plaintext
+  - http://localhost:8080/rolldice/
+  - http://localhost:8080/rolldice/{player}
+  ```
